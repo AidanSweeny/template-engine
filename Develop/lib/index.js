@@ -1,0 +1,10 @@
+const employee = require("../lib/Employee");
+const render = require("../lib/htmlRenderer");
+const manager = require("../lib/Manager");
+const intern = require("../lib/Intern");
+const engineer = require("../lib/Engineer");
+const eng1 = new engineer("Aidan", 3, "aidansweeny@gmail.com", "AidanSweeny");
+const eng2 = new engineer("Aidan", 3, "aidansweeny@gmail.com", "AidanSweeny");
+const eng3 = new engineer("Aidan", 3, "aidansweeny@gmail.com", "AidanSweeny");
+const employees = [eng1, eng2, eng3];
+console.log(render(employees, employee, manager, intern, engineer));
