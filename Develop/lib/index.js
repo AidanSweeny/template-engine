@@ -4,6 +4,7 @@ const manager = require("../lib/Manager");
 const intern = require("../lib/Intern");
 const engineer = require("../lib/Engineer");
 const inquirer = require("inquirer");
+const fs = require("fs");
 let employees = [];
 
 function prompted(){   
@@ -50,7 +51,10 @@ function prompted(){
                     prompted();
                 }
                 else {
-                    fs.writeFile(render(employees));
+                    fs.writeFile('team.html', render(employees), (err) => {
+                        if (err) throw err;
+                        console.log('The file has been saved!');
+                    });
                 }
             })
         })
